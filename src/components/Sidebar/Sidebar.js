@@ -1,10 +1,11 @@
 import React from "react";
+import styles from './Sidebar.module.css';
 
 const Sidebar = () => {
   return (
-  <aside  className="nav">
+  <aside  className={styles.nav}>
     <nav>
-      <ul>
+      <ul className={styles.items}>
         <li>
           <a href="#">Profile</a>
         </li>
