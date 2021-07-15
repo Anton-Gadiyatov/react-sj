@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Post.module.css";
 
-const Post = () => {
+const Post = (props) => {
   return (
     <div>
       <div className={styles.post}>
@@ -10,7 +10,7 @@ const Post = () => {
           src="https://lh3.googleusercontent.com/proxy/8j9HVXFNFrXaLDZNkafiHesyTrtuyKz4QPlbwfBjrU3pcZ7VIPWH72-DiSRysWA7TNIYhZPtpbtzAEoI0sZE6dpT"
           alt="avatar"
         ></img>
-        post 1
+        {props.message}
         <div>
           <span>LIKE</span>
         </div>
