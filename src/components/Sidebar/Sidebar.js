@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 
 const Sidebar = () => {
@@ -8,19 +8,19 @@ const Sidebar = () => {
       <nav>
         <ul className={styles.items}>
           <li>
-            <Link to="/profile">Profile </Link>
+            <NavLink to="/profile" activeClassName={styles.activeLink}>Profile </NavLink>
           </li>
           <li>
-            <Link to="/messages">Messages </Link>
+            <NavLink to="/messages" activeClassName={styles.activeLink}>Messages </NavLink>
           </li>
           <li>
-            <Link to="/news">News </Link>
+            <NavLink to="/news" activeClassName={styles.activeLink}>News </NavLink>
           </li>
           <li>
-            <Link to="/music">Music </Link>
+            <NavLink to="/music" activeClassName={styles.activeLink}>Music </NavLink>
           </li>
           <li>
-            <Link to="/settings">Settings </Link>
+            <NavLink to="/settings" activeClassName={styles.activeLink}>Settings </NavLink>
           </li>
         </ul>
       </nav>
