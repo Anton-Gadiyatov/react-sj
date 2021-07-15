@@ -1,7 +1,7 @@
 .active {
   color: gold;
 }
-.dialog a {
+a {
   text-decoration: none;
   color: white;
 }

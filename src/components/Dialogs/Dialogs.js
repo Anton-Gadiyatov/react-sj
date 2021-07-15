@@ -1,7 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import DialogItem from "./DialogItem/DialogItem";
 import styles from "./Dialogs.module.css";
+import Message from "./Message/Message";
 
 const Dialogs = () => {
   return (
@@ -15,9 +15,9 @@ const Dialogs = () => {
         <DialogItem name="Kostya" id="6" />
       </div>
       <div className={styles.messages}>
-        <div className={styles.message}>Hi</div>
-        <div className={styles.message}>Yo</div>
-        <div className={styles.message}>Kamasutra-it</div>
+        <Message message="Hi" />
+        <Message message="Yo" />
+        <Message message="IT-Kamasutra" />
       </div>
     </div>
   );
