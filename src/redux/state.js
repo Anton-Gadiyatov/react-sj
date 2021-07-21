@@ -14,14 +14,21 @@ const state = {
       { id: 3, message: "Yo" },
       { id: 4, message: "Yo" },
       { id: 5, message: "Yo" },
-    ]
+    ],
   },
   profilePage: {
     postsData: [
-      {id: 1, message: "hi, how are you?", likesCount: 10},
-      {id: 2, message: "it's my first post", likesCount: 20},
-    ]
-  }
-}
+      { id: 1, message: "hi, how are you?", likesCount: 10 },
+      { id: 2, message: "it's my first post", likesCount: 20 },
+    ],
+  },
+  sidebar: {
+    friends: [
+      {avatar: 'Vasya', name: 'Kloun'},
+      {avatar: 'Pasya', name: 'Kloun'},
+      {avatar: 'Dasya', name: 'Kloun'}
+    ],
+  },
+};
 
 export default state;
