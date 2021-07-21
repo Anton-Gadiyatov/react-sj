@@ -24,9 +24,9 @@ const state = {
   },
   sidebar: {
     friends: [
-      {avatar: 'Vasya', name: 'Kloun'},
-      {avatar: 'Pasya', name: 'Kloun'},
-      {avatar: 'Dasya', name: 'Kloun'}
+      { id: 1, avatar: 'Vasya', name: 'Kloun'},
+      { id: 2, avatar: 'Pasya', name: 'Kloun'},
+      { id: 3, avatar: 'Dasya', name: 'Kloun'}
     ],
   },
 };
