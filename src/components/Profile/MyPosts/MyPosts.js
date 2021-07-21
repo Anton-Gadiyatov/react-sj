@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
-
-
 const MyPosts = (props) => {
-  const postsElements = props.postsData.map( post => <Post id={post.id} message={post.message} likesCount={post.likesCount} />)
+  const postsElements = props.postsData.map((post) => (
+    <Post id={post.id} message={post.message} likesCount={post.likesCount} />
+  ));
   return (
     <div className={styles.PostsBlock}>
       <h3>My posts</h3>
@@ -16,9 +16,7 @@ const MyPosts = (props) => {
       <div>
         <button>Add Post</button>
       </div>
-      <div className={styles.posts}>
-        { postsElements }
-      </div>
+      <div className={styles.posts}>{postsElements}</div>
     </div>
   );
 };

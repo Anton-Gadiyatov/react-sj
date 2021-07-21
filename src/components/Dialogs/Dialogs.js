@@ -4,8 +4,8 @@ import styles from "./Dialogs.module.css";
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
-  const messagesElements = props.messagesData.map( message => <Message id={message.id} message={message.message} />)
-  const dialogsElements = props.dialogsData.map( dialog => <DialogItem name={dialog.name} id={dialog.id} /> );
+  const messagesElements = props.state.messagesData.map( message => <Message id={message.id} message={message.message} />)
+  const dialogsElements = props.state.dialogsData.map( dialog => <DialogItem name={dialog.name} id={dialog.id} /> );
 
   return (
     <div className={styles.dialogs}>

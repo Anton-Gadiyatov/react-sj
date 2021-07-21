@@ -17,10 +17,10 @@ const App = (props) => {
         <Sidebar />
         <div className="app-wrapper-content">
           <Route path="/dialogs">
-            <Dialogs messagesData={props.messagesData} dialogsData={props.dialogsData} />
+            <Dialogs state={props.state.dialogsPage} />
           </Route>
           <Route path="/profile">
-            <Profile postsData={props.postData}/>
+            <Profile state={props.state.profilePage}/>
           </Route>
           <Route path="/news">
             <News />
