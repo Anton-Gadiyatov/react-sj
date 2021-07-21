@@ -10,7 +10,12 @@ const Profile = (props) => {
         imgSrc="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
         imAlt="bg-main"
       />
-      <MyPosts postsData={props.state.postsData} addPost={props.addPost} />
+      <MyPosts
+        updateNewPostText={props.updateNewPostText}
+        postsData={props.profilePage.postsData}
+        addPost={props.addPost}
+        newPostText={props.profilePage.newPostText}
+      />
     </main>
   );
 };

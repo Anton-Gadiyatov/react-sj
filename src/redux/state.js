@@ -23,6 +23,7 @@ const state = {
       { id: 1, message: "hi, how are you?", likesCount: 10 },
       { id: 2, message: "it's my first post", likesCount: 20 },
     ],
+    newPostText: 'Kolumbus',
   },
   sidebar: {
     friends: [
@@ -33,16 +34,22 @@ const state = {
   },
 };
 
-export const addPost = (postMessage) => {
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state);
+}
+
+
+export const addPost = () => {
   const newPost = {
     id: state.profilePage.postsData.length + 1,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likesCount: 0,
   };
 
   state.profilePage.postsData.push(newPost);
+  state.profilePage.newPostText = '';
   rerenderEntireTree(state);
 };
-
 
 export default state;
