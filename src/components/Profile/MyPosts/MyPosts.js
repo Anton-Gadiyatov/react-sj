@@ -7,11 +7,12 @@ const MyPosts = (props) => {
     <Post id={id} message={post.message} likesCount={post.likesCount} />
   ));
 
-  let newPostElement = React.createRef();
+  const newPostElement = React.createRef();
 
-  let addPostHandler = () => {
-    let text = newPostElement.current.value;
-    alert(text);
+  const addPostHandler = () => {
+    const text = newPostElement.current.value;
+    props.addPost(text);
+    newPostElement.current.value = '';
   }
 
   return (

@@ -1,3 +1,5 @@
+import rerenderEntireTree from "./../render";
+
 const state = {
   dialogsPage: {
     dialogsData: [
@@ -24,11 +26,23 @@ const state = {
   },
   sidebar: {
     friends: [
-      { id: 1, avatar: 'Vasya', name: 'Kloun'},
-      { id: 2, avatar: 'Pasya', name: 'Kloun'},
-      { id: 3, avatar: 'Dasya', name: 'Kloun'}
+      { id: 1, avatar: "Vasya", name: "Kloun" },
+      { id: 2, avatar: "Pasya", name: "Kloun" },
+      { id: 3, avatar: "Dasya", name: "Kloun" },
     ],
   },
 };
+
+export const addPost = (postMessage) => {
+  const newPost = {
+    id: state.profilePage.postsData.length + 1,
+    message: postMessage,
+    likesCount: 0,
+  };
+
+  state.profilePage.postsData.push(newPost);
+  rerenderEntireTree(state);
+};
+
 
 export default state;
