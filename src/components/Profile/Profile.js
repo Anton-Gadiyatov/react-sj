@@ -11,9 +11,8 @@ const Profile = (props) => {
         imAlt="bg-main"
       />
       <MyPosts
-        updateNewPostText={props.updateNewPostText}
         postsData={props.profilePage.postsData}
-        addPost={props.addPost}
+        dispatch={props.dispatch}
         newPostText={props.profilePage.newPostText}
       />
     </main>
