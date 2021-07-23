@@ -1,8 +1,6 @@
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
-const SEND_MESSAGE = "SEND-MESSAGE";
+import dialogsPageReducer from "./dialogsPage-reducer";
+import profilePageReducer from "./profilePage-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
 const store = {
   _state: {
@@ -52,53 +50,19 @@ const store = {
   },
 
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      const newPost = {
-        id: this._state.profilePage.postsData.length + 1,
-        message: this._state.profilePage.newPostText,
-        likesCount: 0,
-      };
-      if (this._state.profilePage.newPostText !== "") {
-        this._state.profilePage.postsData.push(newPost);
-        this._state.profilePage.newPostText = "";
-        this._callSubscriber(this._state);
-      }
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-      this._state.dialogsPage.newMessageText = action.newMessageText;
-      this._callSubscriber(this._state);
-    } else if (action.type === SEND_MESSAGE) {
-      const newMessage = {
-        id: this._state.dialogsPage.messagesData.length + 1,
-        message: this._state.dialogsPage.newMessageText,
-      };
-      if (this._state.dialogsPage .newMessageText !== "") {
-        this._state.dialogsPage.messagesData.push(newMessage);
-        this._state.dialogsPage.newMessageText = "";
-        this._callSubscriber(this._state);
-      }
-    }
+    this._state.dialogsPage = dialogsPageReducer(
+      this._state.dialogsPage,
+      action
+    );
+    this._state.profilePage = profilePageReducer(
+      this._state.profilePage,
+      action
+    );
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+    this._callSubscriber(this._state);
   },
 };
-
-export const addPostActionCreator = () => ({
-  type: ADD_POST,
-});
-export const updateNewPostTextActionCreator = (text) => ({
-  type: UPDATE_NEW_POST_TEXT,
-  newText: text,
-});
-
-export const sendMessageActionCreator = () => ({
-  type: SEND_MESSAGE,
-});
-export const updateNewMessageTextActionCreator = (text) => ({
-  type: UPDATE_NEW_MESSAGE_TEXT,
-  newMessageText: text,
-});
-
 
 export default store;
 window.store = store;
