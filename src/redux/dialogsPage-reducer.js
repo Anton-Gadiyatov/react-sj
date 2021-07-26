@@ -1,7 +1,26 @@
 const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 const SEND_MESSAGE = "SEND-MESSAGE";
 
-const dialogsPageReducer = (state, action) => {
+const initialState = {
+  dialogsData: [
+    { id: 1, name: "Dimych" },
+    { id: 2, name: "Andrey" },
+    { id: 3, name: "Sveta" },
+    { id: 4, name: "Sasha" },
+    { id: 5, name: "Valera" },
+    { id: 6, name: "Kostya" },
+  ],
+  messagesData: [
+    { id: 1, message: "Hi" },
+    { id: 2, message: "IT-Kamasutra" },
+    { id: 3, message: "Yo" },
+    { id: 4, message: "Yo" },
+    { id: 5, message: "Yo" },
+  ],
+  newMessageText: "",
+};
+
+const dialogsPageReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_NEW_MESSAGE_TEXT: {
       state.newMessageText = action.newMessageText;
