@@ -1,10 +1,7 @@
 import React from "react";
 import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import {
-  addPostActionCreator,
-  updateNewPostTextActionCreator,
-} from "./../../../redux/profilePage-reducer";
+
 
 const MyPosts = (props) => {
   const postsElements = props.postsData.map((post, id) => (
@@ -14,12 +11,12 @@ const MyPosts = (props) => {
   const newPostElement = React.createRef();
 
   const addPostHandler = () => {
-    props.dispatch(addPostActionCreator());
+    props.addPost();
   };
 
   const updatePostTextHandler = () => {
     const text = newPostElement.current.value;
-    props.dispatch(updateNewPostTextActionCreator(text));
+    props.updatePostText(text);
   };
 
   return (
