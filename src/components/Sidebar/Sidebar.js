@@ -25,7 +25,7 @@ const Sidebar = (props) => {
           </li>
         </ul>
       </nav>
-      <Friends state={props.state.friends} />
+      {/* <Friends state={props.state.friends} /> */}
     </aside>
   );
 };

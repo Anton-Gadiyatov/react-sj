@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
-
 const MyPosts = (props) => {
   const postsElements = props.postsData.map((post, id) => (
     <Post id={id} message={post.message} likesCount={post.likesCount} />
